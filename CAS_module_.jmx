@@ -12,10 +12,10 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Thread Group" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Gija" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1346555839">
-            <stringProp name="49">1</stringProp>
+          <collectionProp name="2099225454">
+            <stringProp name="50">2</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="50">2</stringProp>
             <stringProp name="1784">80</stringProp>
@@ -26,14 +26,14 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="CAS prisijungimas" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="770609378">CAS PROD</stringProp>
-            <stringProp name="-1948168983">Thread Group</stringProp>
+            <stringProp name="66485">CAS</stringProp>
+            <stringProp name="2219449">Gija</stringProp>
             <stringProp name="-2014164455">CAS PROD prisijungimas</stringProp>
           </collectionProp>
           <stringProp name="TestPlan.comments">PROD CAS https://sso.vmi.lt/sso/login</stringProp>
@@ -42,11 +42,11 @@
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MANO VMI" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="770609378">CAS PROD</stringProp>
-            <stringProp name="-1948168983">Thread Group</stringProp>
+            <stringProp name="66485">CAS</stringProp>
+            <stringProp name="2219449">Gija</stringProp>
             <stringProp name="198709319">Mano VMI</stringProp>
           </collectionProp>
-          <stringProp name="TestPlan.comments">Logging into CAS Idp</stringProp>
+          <stringProp name="TestPlan.comments">prisijungimas prie Mano VMI kartu su CAS slapukais</stringProp>
         </ModuleController>
         <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
@@ -70,11 +70,6 @@
           <boolProp name="clearEachIteration">true</boolProp>
           <boolProp name="useExpires">true</boolProp>
         </CacheManager>
-        <hashTree/>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="false">
-          <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
-        </CookieManager>
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
@@ -100,7 +95,7 @@
               <stringProp name="Argument.name">IdPHost</stringProp>
               <stringProp name="Argument.value">https://sso.vmi.lt</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">The main URL of your CAS Instance</stringProp>
+              <stringProp name="Argument.desc">CAS nuoroda</stringProp>
             </elementProp>
             <elementProp name="IdPPort" elementType="Argument">
               <stringProp name="Argument.name">IdPPort</stringProp>
@@ -122,7 +117,6 @@
               <stringProp name="Argument.name">CasSP</stringProp>
               <stringProp name="Argument.value">https://www.vmi.lt/manovmi/</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
-              <stringProp name="Argument.desc">domain of registered CAS SP using SAML</stringProp>
             </elementProp>
           </collectionProp>
           <stringProp name="TestPlan.comments">Environment Variables that will need to be updated</stringProp>
@@ -178,7 +172,7 @@
         </ResultCollector>
         <hashTree/>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-          <stringProp name="ConstantTimer.delay">5000</stringProp>
+          <stringProp name="ConstantTimer.delay">4000</stringProp>
         </ConstantTimer>
         <hashTree/>
         <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="CAS PROD prisijungimas" enabled="true"/>
@@ -280,6 +274,16 @@
               <stringProp name="ConstantTimer.delay">5000</stringProp>
             </ConstantTimer>
             <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1312030200">schjript id=&quot;f5_cspm&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Skirtuko pasirinkimas" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -308,7 +312,7 @@
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${IdPHost}</stringProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -458,6 +462,16 @@
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1900535972">Jei po 3 bandymų prisijungti nepavyksta</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Kredencialų suvedimas" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -584,9 +598,21 @@
               <boolProp name="CookieManager.clearEachIteration">false</boolProp>
             </CookieManager>
             <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-978060218">CASTGC=SESSION_ID</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
           </hashTree>
         </hashTree>
-        <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Mano VMI" enabled="true"/>
+        <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Mano VMI" enabled="true">
+          <stringProp name="TestPlan.comments">Mano VMI PROD aplikacija</stringProp>
+        </TestFragmentController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="39 /manovmi/" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -1862,7 +1888,7 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Duomenys raportui" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
